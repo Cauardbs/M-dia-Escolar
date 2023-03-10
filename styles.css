@@ -11,6 +11,7 @@
 }
 
 body {
+  max-width: 100vw;
   max-height: 100vh;
   background-color: #202631;
   color: #14fff1;
@@ -20,31 +21,63 @@ body {
   position: relative;
 }
 
-h1 {
-  margin-top: 25px;
-}
 
 .container {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  width: 400px;
-  margin: auto auto;
+  width: 700px;
+  height: 750px;
+  margin: 50px auto;
+  background-color: #39393f;
+  border-radius: 10px;
+  position: relative;
 }
 
-label {
-  margin-top: 30px;
+.container::before {
+  content: "";
+  position: absolute;
+  top: -3.1px;
+  left: -2.9px;
+  height: 757px;
+  width: 707px;
+  border-radius: 10px;
+  background: linear-gradient(#1e9600, #fff200, #ff0000);
+  z-index: -1;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg) brightness(100%) blur(10px);
+  }
+  100% {
+    filter: hue-rotate(360deg) brightness(100%) blur(10px);
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   font-size: 25px;
 }
 
+label {
+  margin-top: 20px;
+}
+
 input {
-  padding: 8px;
-  width: 200px;
-  display: flex;
+  font-size: 20px;
   text-align: center;
-  margin-left: 95px;
-  margin-top: 10px;
-  border-radius: 15px;
+  height: 30px;
+  width: 50%;
+  margin: auto auto;
+  border-radius: 7px;
   border: none;
 }
 
@@ -52,7 +85,7 @@ input {
   display: block;
   text-decoration: none;
   font-size: 32px;
-  margin-top: 30px;
+  background-color: #39393f;
   color: #14fff1;
   border: 8px solid #14fff1;
   padding: 10px;
@@ -62,6 +95,8 @@ input {
   box-shadow: inset 0 0 32px #14fff1, 0 0 32px #14fff1;
   width: 300px;
   position: relative;
+  margin: 30px auto;
+  cursor: pointer;
 }
 
 .neon-btn::before {
@@ -73,7 +108,6 @@ input {
   background-color: #14fff1;
   left: 0;
   top: 120%;
-
   transform: perspective(64px) rotateX(40deg) scale(1, 0.35);
   filter: blur(64px);
   opacity: 0.7;
@@ -107,49 +141,11 @@ input {
 .neon-btn:focus {
   color: #202631;
   text-shadow: none;
+  background-color: #14fff1;
 }
 
-
-#imc {
-  margin-top: 50px;
-  font-size: 40px;
-}
-
- td {
-  border: 1px solid #14fff1;
-}
-
-
-.container-table {
-  margin-top: 20px;
-  width: 600px;
-  height: 350px;
-  display: flex;
-  justify-content: center;
+#resultado {
   text-align: center;
-  margin: auto auto;
-  margin-top: 20px;
-
-}
-
-.table {
-  text-align: center;
-  font-size: 20px;
+  font-size: 25px;
   margin-top: 10px;
-  width: 100%;
-}
-
-
-@media(max-width: 768px) {
-  .container-table {
-    max-width: 100vw;
-    height: 600px;
-  }
-
-  .table {
-    text-align: center;
-    width: 100%;
-    font-size: 15px;
-  }
-
 }
